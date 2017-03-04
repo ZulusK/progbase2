@@ -1,0 +1,3 @@
+/usr/local/include/dlList.h
+/usr/local/include/university.h
+/usr/local/lib/libuniversity.a

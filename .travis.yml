@@ -1,0 +1,18 @@
+sudo: required
+language: c
+os:
+  - linux
+
+before_install:
+  - sudo apt-get install check lcov
+
+before_script:  
+  - cmake .
+
+script: 
+  - make 
+  - make test
+  - lcov --directory . --capture --output-file coverage.info
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)

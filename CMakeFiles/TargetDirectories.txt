@@ -1,0 +1,10 @@
+/home/zulus/Projects/GitProj/progbase2/CMakeFiles/list_install_components.dir
+/home/zulus/Projects/GitProj/progbase2/CMakeFiles/install.dir
+/home/zulus/Projects/GitProj/progbase2/CMakeFiles/rebuild_cache.dir
+/home/zulus/Projects/GitProj/progbase2/CMakeFiles/test.dir
+/home/zulus/Projects/GitProj/progbase2/CMakeFiles/edit_cache.dir
+/home/zulus/Projects/GitProj/progbase2/CMakeFiles/university.dir
+/home/zulus/Projects/GitProj/progbase2/CMakeFiles/a.out.dir
+/home/zulus/Projects/GitProj/progbase2/CMakeFiles/install/local.dir
+/home/zulus/Projects/GitProj/progbase2/CMakeFiles/install/strip.dir
+/home/zulus/Projects/GitProj/progbase2/CMakeFiles/a.out_coverage.dir
