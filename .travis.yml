@@ -2,9 +2,8 @@ sudo: required
 language: c
 os:
   - linux
-compiler:
-  -gcc
-  -std=c99
+compiler: gcc -std=c99
+  
 before_install:
   - sudo apt-get install check lcov
 
