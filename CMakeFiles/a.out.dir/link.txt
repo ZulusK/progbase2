@@ -1,1 +1,0 @@
-/usr/bin/cc  -g -O0 -fprofile-arcs -ftest-coverage   CMakeFiles/a.out.dir/test/main.c.o CMakeFiles/a.out.dir/src/lect.c.o CMakeFiles/a.out.dir/src/stud.c.o CMakeFiles/a.out.dir/src/university.c.o CMakeFiles/a.out.dir/src/collection/dlList.c.o CMakeFiles/a.out.dir/src/collection/dlNode.c.o  -o a.out -rdynamic -lcheck 

@@ -4,31 +4,59 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-START_TEST(addListToLec_normal){
+START_TEST(addListToLec_normal) {
 	DLList * listA = DLList_create(STUDENT);
 	Student * studentsA[3];
-	for(int i=0; i<3;i++){
-		studentsA[i]=Student_create(NULL,i,0);
-		DLList_addFirst(listA,STUDENT,studentsA[i]);
+	for (int i = 0; i < 3; i++) {
+		studentsA[i] = Student_create(NULL, i, 0);
+		DLList_addFirst(listA, STUDENT, studentsA[i]);
 	}
-	DLList * listB= DLList_create(STUDENT);
+	DLList * listB = DLList_create(STUDENT);
 	Student * studentsB[3];
-	for(int i=0; i<3;i++){
-		studentsB[i]=Student_create(NULL,i,1);
-		DLList_addFirst(listB,STUDENT,studentsB[i]);
+	for (int i = 0; i < 3; i++) {
+		studentsB[i] = Student_create(NULL, i, 1);
+		DLList_addFirst(listB, STUDENT, studentsB[i]);
 	}
-	Lecturer * lec=Lecturer_create("Test",listB);
-	for(int i=0; i<3; i++){
-		ck_assert_int_eq(Lecturer_containsStudent(lec,studentsB[i]),1);
+	Lecturer * lec = Lecturer_create("Test", listB);
+	for (int i = 0; i < 3; i++) {
+		ck_assert_int_eq(Lecturer_containsStudent(lec, studentsB[i]), 1);
 	}
-	Lecturer_addStudentList(lec,listA);
-	for(int i=0; i<3; i++){
-		ck_assert_int_eq(Lecturer_containsStudent(lec,studentsA[i]),1);
-		ck_assert_int_eq(Lecturer_containsStudent(lec,studentsB[i]),1);
+	Lecturer_addStudentList(lec, listA);
+	for (int i = 0; i < 3; i++) {
+		ck_assert_int_eq(Lecturer_containsStudent(lec, studentsA[i]), 1);
+		ck_assert_int_eq(Lecturer_containsStudent(lec, studentsB[i]), 1);
 	}
 	Lecturer_free(&lec);
-	DLList_free(&listA,Student_free);
-	DLList_free(&listB,Student_free);
+	DLList_free(&listA, Student_free);
+	DLList_free(&listB, Student_free);
+}
+END_TEST
+
+START_TEST(addListToLec_intersect) {
+	DLList * listA = DLList_create(STUDENT);
+	Student * studentsA[4];
+	Lecturer * lec = Lecturer_create("test", NULL);
+	for (int i = 0; i < 4; i++) {
+		studentsA[i] = Student_create(NULL, i, 0);
+		DLList_addFirst(listA, STUDENT, studentsA[i]);
+	}
+	for (int i = 0; i < 3; i++) {
+		Lecturer_addStudent(lec, studentsA[i]);
+	}
+	Lecturer_addStudentList(lec, listA);
+	ck_assert_int_eq(DLList_getLength(Lecturer_getStudentList(lec)), 4);
+	Lecturer_free(&lec);
+	DLList_free(&listA, Student_free);
+}
+END_TEST
+
+START_TEST(addListToLec_empty) {
+	DLList * listA = DLList_create(STUDENT);
+	Lecturer * lec = Lecturer_create("test", NULL);
+	Lecturer_addStudentList(lec, listA);
+	ck_assert_int_eq(DLList_getLength(Lecturer_getStudentList(lec)), 0);
+	Lecturer_free(&lec);
+	DLList_free(&listA, Student_free);
 }
 END_TEST
 START_TEST (getNotExistingStudents_listNotEmpty)
@@ -105,7 +133,7 @@ START_TEST (getNotExistingStudents_twoEqualsStudent)
 	}
 	listB = university_getNotExistingStudents(lec, listA);
 	ck_assert_int_eq(DLList_getLength(listB), 0);
-	
+
 	Lecturer_free(&lec);
 	for (int i = 0; i < 4; i++) {
 		Student_free(students[i]);
@@ -116,60 +144,76 @@ START_TEST (getNotExistingStudents_twoEqualsStudent)
 END_TEST
 
 
-// START_TEST (getStudFromCSV_emptyStr)
-// {
-// 	char * str="";
-// 	DLList * list=university_getStudentFromCSV(str);
-// 	ck_assert_ptr_ne(list,NULL);
-// 	ck_assert_int_eq(DLList_getLength(list),0);
-// 	DLList_free(&list,NULL);
-// }
-// END_TEST
+START_TEST (getStudFromCSV_emptyStr)
+{
+	char * str = "";
+	DLList * list = university_getStudentFromCSV(str);
+	ck_assert_int_eq(DLList_getLength(list), 0);
+	DLList_free(&list, NULL);
+}
+END_TEST
 
+START_TEST(getStudFromCSV_correctData) {
+	DLList * listA = DLList_create(STUDENT);
+	DLList_addFirst(listA, STUDENT, Student_create("Dima TUROK", 1.11, 1));
+	DLList_addFirst(listA, STUDENT, Student_create(NULL, -12.34, 2));
+	DLList_addFirst(listA, STUDENT, Student_create("Ruslan Pro12ge23r 55 Top", 99.99, 3));
 
-// START_TEST (getStudFromCSV_IncorrectData)
-// {
-// 	char * str=
-// 	"\"DIMA, 123, 124.0\n\
-// 	\"KOLYAS\",-12.1,56.2\n\
-// 	\n";
-// 	DLList * list=university_getStudentFromCSV(str);
-// 	ck_assert_ptr_ne(list,NULL);
-// 	ck_assert_int_eq(DLList_getLength(list),0);
-// 	DLList_free(&list,NULL);
-// }
-// END_TEST
+	char * csv = university_studentListToCSV(listA);
+	DLList * listB = university_getStudentFromCSV(csv);
+
+	free(csv);
+	csv=university_studentListToCSV(listB);
+	free(csv);
+	for (int i = 0; i < DLList_getLength(listB); i++) {
+		ck_assert_int_eq(DLList_contains(listA, STUDENT, DLList_get(listB, i), Student_compare), 1);
+	}
+	DLList_free(&listA,Student_free);
+	DLList_free(&listB,Student_free);
+	
+}
+END_TEST
+START_TEST (getStudFromCSV_IncorrectData)
+{
+	char * str =
+	    "\"DIMA\", 123+, -124.0\n\"KOLYAS,-12,56.2\n";
+	DLList * list = university_getStudentFromCSV(str);
+	ck_assert_int_eq(DLList_getLength(list), 2);
+	ck_assert_str_eq(Student_getName(DLList_get(list, 1)), "KOLYAS,-12,56.2");
+	DLList_free(&list, Student_free);
+}
+END_TEST
 
 
 START_TEST (studentsToCSV_normal)
 {
-	Student *stud1=Student_create("Roma",1.1,1);
-	Student *stud2=Student_create("Dima",2.14,2);
-	Student *stud3=Student_create("Danya",3.11,3);
-	Student *stud4=Student_create("Illya",4.15,4);
-	DLList * listA=DLList_create(STUDENT);
+	Student *stud1 = Student_create("Roma", 1.1, 1);
+	Student *stud2 = Student_create("Dima", 2.14, 2);
+	Student *stud3 = Student_create("Danya", 3.11, 3);
+	Student *stud4 = Student_create("Illya", 4.15, 4);
+	DLList * listA = DLList_create(STUDENT);
 
-	DLList_addLast(listA,STUDENT,stud1);
-	DLList_addLast(listA,STUDENT,stud2);
-	DLList_addLast(listA,STUDENT,stud3);
-	DLList_addLast(listA,STUDENT,stud4);
+	DLList_addLast(listA, STUDENT, stud1);
+	DLList_addLast(listA, STUDENT, stud2);
+	DLList_addLast(listA, STUDENT, stud3);
+	DLList_addLast(listA, STUDENT, stud4);
 
-	char * str=university_studentListToCSV(listA);
-	char * resultStr="\"Roma\",1.10,1\n\"Dima\",2.14,2\n\"Danya\",3.11,3\n\"Illya\",4.15,4\n";
-	ck_assert_str_eq(str,resultStr);
+	char * str = university_studentListToCSV(listA);
+	char * resultStr = "\"Roma\",1.10,1\n\"Dima\",2.14,2\n\"Danya\",3.11,3\n\"Illya\",4.15,4\n";
+	ck_assert_str_eq(str, resultStr);
 	free(str);
-	DLList_free(&listA,Student_free);
+	DLList_free(&listA, Student_free);
 }
 END_TEST
 START_TEST (studentsToCSV_empty)
 {
-	DLList * listA=DLList_create(STUDENT);
+	DLList * listA = DLList_create(STUDENT);
 
-	char * str=university_studentListToCSV(listA);
-	char * resultStr="";
-	ck_assert_str_eq(str,resultStr);
+	char * str = university_studentListToCSV(listA);
+	char * resultStr = "";
+	ck_assert_str_eq(str, resultStr);
 	free(str);
-	DLList_free(&listA,Student_free);
+	DLList_free(&listA, Student_free);
 }
 END_TEST
 
@@ -187,14 +231,17 @@ Suite *test_suite() {
 
 	tc_addListToLec = tcase_create("GetNotExistingStudents");
 	tcase_add_test(tc_testGetList, addListToLec_normal);
+	tcase_add_test(tc_testGetList, addListToLec_intersect);
+	tcase_add_test(tc_testGetList, addListToLec_empty);
 	suite_add_tcase(s, tc_addListToLec);
-	// TCase *tc_testGetStudentFromStr;
 
-	// tc_testGetStudentFromStr = tcase_create("GetNotExistingStudents");
-	// tcase_add_test(tc_testGetStudentFromStr, getStudFromCSV_emptyStr);
-	// tcase_add_test(tc_testGetStudentFromStr, getStudFromCSV_incorrectData);
-	// tcase_add_test(tc_testGetStudentFromStr, getStudFromCSV_normalWork);
-	// suite_add_tcase(s, tc_testGetStudentFromStr);
+	TCase *tc_testGetStudentFromStr;
+
+	tc_testGetStudentFromStr = tcase_create("GetNotExistingStudents");
+	tcase_add_test(tc_testGetStudentFromStr, getStudFromCSV_emptyStr);
+	tcase_add_test(tc_testGetStudentFromStr, getStudFromCSV_IncorrectData);
+	tcase_add_test(tc_testGetStudentFromStr, getStudFromCSV_correctData);
+	suite_add_tcase(s, tc_testGetStudentFromStr);
 
 	TCase *tc_studToCSV;
 

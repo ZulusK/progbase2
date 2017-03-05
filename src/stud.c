@@ -44,6 +44,8 @@ int Student_compare(void * v1, void *v2) {
 	if (strcmp(s1->name, s2->name) == 0 && s1->year == s2->year && fabs(s1->score - s2->score) < 0.001) {
 		return 0;
 	} else {
+		// printf("s1: %s===%i===%lf\n",s1->name,s1->year,s1->score);
+		// printf("s2: %s===%i===%lf\n\n",s2->name,s2->year,s2->score);
 		return 1;
 	}
 }
