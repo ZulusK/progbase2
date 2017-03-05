@@ -29,9 +29,10 @@ install(TARGETS ${PROJECT_NAME} DESTINATION /usr/local/lib)
 #
 project(a.out)
 add_executable(${CMAKE_PROJECT_NAME} "tests/main.c" ${LIB_SOURCES} ${LIB_SOURCES_LIST})
+
+set_property(TARGET ${CMAKE_CXX_FLAGS} PROPERTY C_STANDARD 99)
 target_link_libraries(${CMAKE_PROJECT_NAME} libcheck.so)
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c99 -coverage")
-set_property(TARGET ${CMAKE_CXX_FLAGS} PROPERTY C_STANDARD 99)
 #
 # Create make test
 
