@@ -9,6 +9,8 @@ include_directories(include)
 # compiles code files from ./src folder
 file(GLOB LIB_SOURCES "src/*.c" )
 file(GLOB LIB_SOURCES_LIST "src/collection/*.c")
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c99 -coverage")
 #
 # first project (static lib)
 #
