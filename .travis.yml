@@ -2,7 +2,6 @@ sudo: required
 language: c
 os:
   - linux
-compiler: gcc -std=c99
   
 before_install:
   - sudo apt-get install check lcov
@@ -11,7 +10,7 @@ before_script:
   - cmake .
 
 script: 
-  - make -std=99
+  - make
   - make test
   - lcov --directory . --capture --output-file coverage.info
 
