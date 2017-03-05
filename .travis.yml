@@ -11,7 +11,7 @@ before_script:
   - cmake .
 
 script: 
-  - make 
+  - make -std=99
   - make test
   - lcov --directory . --capture --output-file coverage.info
 
