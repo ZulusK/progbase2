@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/ZulusK/progbase2.svg?branch=master)](https://travis-ci.org/ZulusK/progbase2)
+[![codecov-badge](https://codecov.io/gh/PublicHadyniak/Travis-ci-sample/branch/master/graph/badge.svg)](https://codecov.io/gh/PublicHadyniak/travis-ci-sample)
 # Travis-CI Sample Project (C + CMake)
 [Extra] Continuous Integration
 Завдання 1. Статична бібліотека та модульні тести
