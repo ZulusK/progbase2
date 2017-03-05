@@ -9,10 +9,11 @@ before_install:
 before_script:  
   - cmake .
 
-script: 
+script:
+  - gcc -std=c99 tests.c lib.a -coverage -o a.out -lcheck
   - make
   - make test
-  - lcov --directory . --capture --output-file coverage.info
+  - -std=c99 lcov --directory . --capture --output-file coverage.info
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
