@@ -7,22 +7,23 @@
 START_TEST(addListToLec_normal) {
 	DLList * listA = DLList_create(STUDENT);
 	Student * studentsA[3];
-	for (int i = 0; i < 3; i++) {
+	int i;
+	for (i = 0; i < 3; i++) {
 		studentsA[i] = Student_create(NULL, i, 0);
 		DLList_addFirst(listA, STUDENT, studentsA[i]);
 	}
 	DLList * listB = DLList_create(STUDENT);
 	Student * studentsB[3];
-	for (int i = 0; i < 3; i++) {
+	for (i = 0; i < 3; i++) {
 		studentsB[i] = Student_create(NULL, i, 1);
 		DLList_addFirst(listB, STUDENT, studentsB[i]);
 	}
 	Lecturer * lec = Lecturer_create("Test", listB);
-	for (int i = 0; i < 3; i++) {
+	for (i = 0; i < 3; i++) {
 		ck_assert_int_eq(Lecturer_containsStudent(lec, studentsB[i]), 1);
 	}
 	Lecturer_addStudentList(lec, listA);
-	for (int i = 0; i < 3; i++) {
+	for (i = 0; i < 3; i++) {
 		ck_assert_int_eq(Lecturer_containsStudent(lec, studentsA[i]), 1);
 		ck_assert_int_eq(Lecturer_containsStudent(lec, studentsB[i]), 1);
 	}
@@ -36,11 +37,12 @@ START_TEST(addListToLec_intersect) {
 	DLList * listA = DLList_create(STUDENT);
 	Student * studentsA[4];
 	Lecturer * lec = Lecturer_create("test", NULL);
-	for (int i = 0; i < 4; i++) {
+	int i;
+	for ( i = 0; i < 4; i++) {
 		studentsA[i] = Student_create(NULL, i, 0);
 		DLList_addFirst(listA, STUDENT, studentsA[i]);
 	}
-	for (int i = 0; i < 3; i++) {
+	for (i = 0; i < 3; i++) {
 		Lecturer_addStudent(lec, studentsA[i]);
 	}
 	Lecturer_addStudentList(lec, listA);
@@ -65,11 +67,12 @@ START_TEST (getNotExistingStudents_listNotEmpty)
 	DLList * listB = NULL;
 	Lecturer * lec = Lecturer_create(NULL, NULL);
 	Student * students[6];
-	for (int i = 0; i < 6; i++) {
+	int i;
+	for ( i = 0; i < 6; i++) {
 		students[i] = Student_create(NULL, i, i);
 	}
 	//add tudentsto list
-	for (int i = 0; i < 6; i++) {
+	for ( i = 0; i < 6; i++) {
 		DLList_addFirst(listA, STUDENT, students[i]);
 	}
 	for (int i = 3; i < 6; i++) {
@@ -77,11 +80,11 @@ START_TEST (getNotExistingStudents_listNotEmpty)
 	}
 	listB = university_getNotExistingStudents(lec, listA);
 	ck_assert_int_eq(DLList_getLength(listB), 3);
-	for (int i = 0; i < DLList_getLength(listB); i++) {
+	for (i = 0; i < DLList_getLength(listB); i++) {
 		ck_assert_int_ne(DLList_contains(listB, STUDENT, students[i], Student_compare), 0);
 	}
 	Lecturer_free(&lec);
-	for (int i = 0; i < 6; i++) {
+	for (i = 0; i < 6; i++) {
 		Student_free(students[i]);
 	}
 	DLList_free(&listA, NULL);
@@ -95,17 +98,18 @@ START_TEST (getNotExistingStudents_listEmpty)
 	DLList * listB = NULL;
 	Lecturer * lec = Lecturer_create(NULL, NULL);
 	Student * students[3];
-	for (int i = 0; i < 3; i++) {
+	int i;
+	for (i = 0; i < 3; i++) {
 		students[i] = Student_create(NULL, i, i);
 	}
-	for (int i = 0; i < 3; i++) {
+	for ( i = 0; i < 3; i++) {
 		Lecturer_addStudent(lec, students[i]);
 	}
 	listB = university_getNotExistingStudents(lec, listA);
 	ck_assert_int_eq(DLList_getLength(listB), 0);
 
 	Lecturer_free(&lec);
-	for (int i = 0; i < 3; i++) {
+	for (i = 0; i < 3; i++) {
 		Student_free(students[i]);
 	}
 	DLList_free(&listA, NULL);
@@ -119,23 +123,24 @@ START_TEST (getNotExistingStudents_twoEqualsStudent)
 	DLList * listB = NULL;
 	Lecturer * lec = Lecturer_create(NULL, NULL);
 	Student * students[4];
-	for (int i = 0; i < 3; i++) {
+	int i;
+	for ( i = 0; i < 3; i++) {
 		students[i] = Student_create(NULL, i, i);
 	}
 	students[3] = Student_create(NULL, 2, 2);
 
-	for (int i = 0; i < 4; i++) {
+	for ( i = 0; i < 4; i++) {
 		DLList_addFirst(listA, STUDENT, students[i]);
 	}
 
-	for (int i = 0; i < 3; i++) {
+	for ( i = 0; i < 3; i++) {
 		Lecturer_addStudent(lec, students[i]);
 	}
 	listB = university_getNotExistingStudents(lec, listA);
 	ck_assert_int_eq(DLList_getLength(listB), 0);
 
 	Lecturer_free(&lec);
-	for (int i = 0; i < 4; i++) {
+	for ( i = 0; i < 4; i++) {
 		Student_free(students[i]);
 	}
 	DLList_free(&listA, NULL);
@@ -165,7 +170,8 @@ START_TEST(getStudFromCSV_correctData) {
 	free(csv);
 	csv=university_studentListToCSV(listB);
 	free(csv);
-	for (int i = 0; i < DLList_getLength(listB); i++) {
+	int i;
+	for ( i = 0; i < DLList_getLength(listB); i++) {
 		ck_assert_int_eq(DLList_contains(listA, STUDENT, DLList_get(listB, i), Student_compare), 1);
 	}
 	DLList_free(&listA,Student_free);
