@@ -75,7 +75,7 @@ START_TEST (getNotExistingStudents_listNotEmpty)
 	for ( i = 0; i < 6; i++) {
 		DLList_addFirst(listA, STUDENT, students[i]);
 	}
-	for (int i = 3; i < 6; i++) {
+	for (i = 3; i < 6; i++) {
 		Lecturer_addStudent(lec, students[i]);
 	}
 	listB = university_getNotExistingStudents(lec, listA);
