@@ -249,11 +249,10 @@ DLList * DLList_clear(DLList * list, void (*data_free)(void *)) {
 	if (list == NULL) throw("NullPointerException");
 	if (list->item != NULL) {
 		DLNode  * node = list->item;
-		DLNode * tmp;
 		while (node != NULL) {
-			tmp = DLNode_getNext(node);
+			list->item = DLNode_getNext(node);
 			DLNode_free(&node, data_free);
-			node = tmp;
+			node = list->item;
 		}
 	}
 	list->item = NULL;

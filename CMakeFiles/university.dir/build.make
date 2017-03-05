@@ -57,57 +57,81 @@ include CMakeFiles/university.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/university.dir/flags.make
 
-CMakeFiles/university.dir/src/lecturer.c.o: CMakeFiles/university.dir/flags.make
-CMakeFiles/university.dir/src/lecturer.c.o: src/lecturer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/progbase2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/university.dir/src/lecturer.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/university.dir/src/lecturer.c.o   -c /home/zulus/Projects/GitProj/progbase2/src/lecturer.c
+CMakeFiles/university.dir/src/lect.c.o: CMakeFiles/university.dir/flags.make
+CMakeFiles/university.dir/src/lect.c.o: src/lect.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/progbase2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/university.dir/src/lect.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/university.dir/src/lect.c.o   -c /home/zulus/Projects/GitProj/progbase2/src/lect.c
 
-CMakeFiles/university.dir/src/lecturer.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/university.dir/src/lecturer.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zulus/Projects/GitProj/progbase2/src/lecturer.c > CMakeFiles/university.dir/src/lecturer.c.i
+CMakeFiles/university.dir/src/lect.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/university.dir/src/lect.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zulus/Projects/GitProj/progbase2/src/lect.c > CMakeFiles/university.dir/src/lect.c.i
 
-CMakeFiles/university.dir/src/lecturer.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/university.dir/src/lecturer.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zulus/Projects/GitProj/progbase2/src/lecturer.c -o CMakeFiles/university.dir/src/lecturer.c.s
+CMakeFiles/university.dir/src/lect.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/university.dir/src/lect.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zulus/Projects/GitProj/progbase2/src/lect.c -o CMakeFiles/university.dir/src/lect.c.s
 
-CMakeFiles/university.dir/src/lecturer.c.o.requires:
+CMakeFiles/university.dir/src/lect.c.o.requires:
 
-.PHONY : CMakeFiles/university.dir/src/lecturer.c.o.requires
+.PHONY : CMakeFiles/university.dir/src/lect.c.o.requires
 
-CMakeFiles/university.dir/src/lecturer.c.o.provides: CMakeFiles/university.dir/src/lecturer.c.o.requires
-	$(MAKE) -f CMakeFiles/university.dir/build.make CMakeFiles/university.dir/src/lecturer.c.o.provides.build
-.PHONY : CMakeFiles/university.dir/src/lecturer.c.o.provides
+CMakeFiles/university.dir/src/lect.c.o.provides: CMakeFiles/university.dir/src/lect.c.o.requires
+	$(MAKE) -f CMakeFiles/university.dir/build.make CMakeFiles/university.dir/src/lect.c.o.provides.build
+.PHONY : CMakeFiles/university.dir/src/lect.c.o.provides
 
-CMakeFiles/university.dir/src/lecturer.c.o.provides.build: CMakeFiles/university.dir/src/lecturer.c.o
+CMakeFiles/university.dir/src/lect.c.o.provides.build: CMakeFiles/university.dir/src/lect.c.o
 
 
-CMakeFiles/university.dir/src/student.c.o: CMakeFiles/university.dir/flags.make
-CMakeFiles/university.dir/src/student.c.o: src/student.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/progbase2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/university.dir/src/student.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/university.dir/src/student.c.o   -c /home/zulus/Projects/GitProj/progbase2/src/student.c
+CMakeFiles/university.dir/src/stud.c.o: CMakeFiles/university.dir/flags.make
+CMakeFiles/university.dir/src/stud.c.o: src/stud.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/progbase2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/university.dir/src/stud.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/university.dir/src/stud.c.o   -c /home/zulus/Projects/GitProj/progbase2/src/stud.c
 
-CMakeFiles/university.dir/src/student.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/university.dir/src/student.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zulus/Projects/GitProj/progbase2/src/student.c > CMakeFiles/university.dir/src/student.c.i
+CMakeFiles/university.dir/src/stud.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/university.dir/src/stud.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zulus/Projects/GitProj/progbase2/src/stud.c > CMakeFiles/university.dir/src/stud.c.i
 
-CMakeFiles/university.dir/src/student.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/university.dir/src/student.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zulus/Projects/GitProj/progbase2/src/student.c -o CMakeFiles/university.dir/src/student.c.s
+CMakeFiles/university.dir/src/stud.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/university.dir/src/stud.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zulus/Projects/GitProj/progbase2/src/stud.c -o CMakeFiles/university.dir/src/stud.c.s
 
-CMakeFiles/university.dir/src/student.c.o.requires:
+CMakeFiles/university.dir/src/stud.c.o.requires:
 
-.PHONY : CMakeFiles/university.dir/src/student.c.o.requires
+.PHONY : CMakeFiles/university.dir/src/stud.c.o.requires
 
-CMakeFiles/university.dir/src/student.c.o.provides: CMakeFiles/university.dir/src/student.c.o.requires
-	$(MAKE) -f CMakeFiles/university.dir/build.make CMakeFiles/university.dir/src/student.c.o.provides.build
-.PHONY : CMakeFiles/university.dir/src/student.c.o.provides
+CMakeFiles/university.dir/src/stud.c.o.provides: CMakeFiles/university.dir/src/stud.c.o.requires
+	$(MAKE) -f CMakeFiles/university.dir/build.make CMakeFiles/university.dir/src/stud.c.o.provides.build
+.PHONY : CMakeFiles/university.dir/src/stud.c.o.provides
 
-CMakeFiles/university.dir/src/student.c.o.provides.build: CMakeFiles/university.dir/src/student.c.o
+CMakeFiles/university.dir/src/stud.c.o.provides.build: CMakeFiles/university.dir/src/stud.c.o
+
+
+CMakeFiles/university.dir/src/university.c.o: CMakeFiles/university.dir/flags.make
+CMakeFiles/university.dir/src/university.c.o: src/university.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/progbase2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/university.dir/src/university.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/university.dir/src/university.c.o   -c /home/zulus/Projects/GitProj/progbase2/src/university.c
+
+CMakeFiles/university.dir/src/university.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/university.dir/src/university.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/zulus/Projects/GitProj/progbase2/src/university.c > CMakeFiles/university.dir/src/university.c.i
+
+CMakeFiles/university.dir/src/university.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/university.dir/src/university.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/zulus/Projects/GitProj/progbase2/src/university.c -o CMakeFiles/university.dir/src/university.c.s
+
+CMakeFiles/university.dir/src/university.c.o.requires:
+
+.PHONY : CMakeFiles/university.dir/src/university.c.o.requires
+
+CMakeFiles/university.dir/src/university.c.o.provides: CMakeFiles/university.dir/src/university.c.o.requires
+	$(MAKE) -f CMakeFiles/university.dir/build.make CMakeFiles/university.dir/src/university.c.o.provides.build
+.PHONY : CMakeFiles/university.dir/src/university.c.o.provides
+
+CMakeFiles/university.dir/src/university.c.o.provides.build: CMakeFiles/university.dir/src/university.c.o
 
 
 CMakeFiles/university.dir/src/collection/dlList.c.o: CMakeFiles/university.dir/flags.make
 CMakeFiles/university.dir/src/collection/dlList.c.o: src/collection/dlList.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/progbase2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/university.dir/src/collection/dlList.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/progbase2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/university.dir/src/collection/dlList.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/university.dir/src/collection/dlList.c.o   -c /home/zulus/Projects/GitProj/progbase2/src/collection/dlList.c
 
 CMakeFiles/university.dir/src/collection/dlList.c.i: cmake_force
@@ -131,7 +155,7 @@ CMakeFiles/university.dir/src/collection/dlList.c.o.provides.build: CMakeFiles/u
 
 CMakeFiles/university.dir/src/collection/dlNode.c.o: CMakeFiles/university.dir/flags.make
 CMakeFiles/university.dir/src/collection/dlNode.c.o: src/collection/dlNode.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/progbase2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/university.dir/src/collection/dlNode.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/progbase2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/university.dir/src/collection/dlNode.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/university.dir/src/collection/dlNode.c.o   -c /home/zulus/Projects/GitProj/progbase2/src/collection/dlNode.c
 
 CMakeFiles/university.dir/src/collection/dlNode.c.i: cmake_force
@@ -155,21 +179,23 @@ CMakeFiles/university.dir/src/collection/dlNode.c.o.provides.build: CMakeFiles/u
 
 # Object files for target university
 university_OBJECTS = \
-"CMakeFiles/university.dir/src/lecturer.c.o" \
-"CMakeFiles/university.dir/src/student.c.o" \
+"CMakeFiles/university.dir/src/lect.c.o" \
+"CMakeFiles/university.dir/src/stud.c.o" \
+"CMakeFiles/university.dir/src/university.c.o" \
 "CMakeFiles/university.dir/src/collection/dlList.c.o" \
 "CMakeFiles/university.dir/src/collection/dlNode.c.o"
 
 # External object files for target university
 university_EXTERNAL_OBJECTS =
 
-libuniversity.a: CMakeFiles/university.dir/src/lecturer.c.o
-libuniversity.a: CMakeFiles/university.dir/src/student.c.o
+libuniversity.a: CMakeFiles/university.dir/src/lect.c.o
+libuniversity.a: CMakeFiles/university.dir/src/stud.c.o
+libuniversity.a: CMakeFiles/university.dir/src/university.c.o
 libuniversity.a: CMakeFiles/university.dir/src/collection/dlList.c.o
 libuniversity.a: CMakeFiles/university.dir/src/collection/dlNode.c.o
 libuniversity.a: CMakeFiles/university.dir/build.make
 libuniversity.a: CMakeFiles/university.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zulus/Projects/GitProj/progbase2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libuniversity.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zulus/Projects/GitProj/progbase2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library libuniversity.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/university.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/university.dir/link.txt --verbose=$(VERBOSE)
 
@@ -178,8 +204,9 @@ CMakeFiles/university.dir/build: libuniversity.a
 
 .PHONY : CMakeFiles/university.dir/build
 
-CMakeFiles/university.dir/requires: CMakeFiles/university.dir/src/lecturer.c.o.requires
-CMakeFiles/university.dir/requires: CMakeFiles/university.dir/src/student.c.o.requires
+CMakeFiles/university.dir/requires: CMakeFiles/university.dir/src/lect.c.o.requires
+CMakeFiles/university.dir/requires: CMakeFiles/university.dir/src/stud.c.o.requires
+CMakeFiles/university.dir/requires: CMakeFiles/university.dir/src/university.c.o.requires
 CMakeFiles/university.dir/requires: CMakeFiles/university.dir/src/collection/dlList.c.o.requires
 CMakeFiles/university.dir/requires: CMakeFiles/university.dir/src/collection/dlNode.c.o.requires
 

@@ -26,7 +26,7 @@ assert.h
 stdio.h
 -
 
-/home/zulus/Projects/GitProj/progbase2/src/lecturer.c
+/home/zulus/Projects/GitProj/progbase2/src/lect.c
 university.h
 -
 dlList.h
@@ -38,7 +38,7 @@ string.h
 assert.h
 -
 
-/home/zulus/Projects/GitProj/progbase2/src/student.c
+/home/zulus/Projects/GitProj/progbase2/src/stud.c
 university.h
 -
 assert.h
@@ -46,6 +46,22 @@ assert.h
 math.h
 -
 stdlib.h
+-
+stdio.h
+-
+string.h
+-
+
+/home/zulus/Projects/GitProj/progbase2/src/university.c
+dlList.h
+-
+university.h
+-
+stdlib.h
+-
+stdio.h
+-
+assert.h
 -
 string.h
 -

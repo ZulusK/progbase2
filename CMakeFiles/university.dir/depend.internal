@@ -7,11 +7,15 @@ CMakeFiles/university.dir/src/collection/dlList.c.o
 CMakeFiles/university.dir/src/collection/dlNode.c.o
  /home/zulus/Projects/GitProj/progbase2/src/collection/dlNode.c
  include/dlList.h
-CMakeFiles/university.dir/src/lecturer.c.o
- /home/zulus/Projects/GitProj/progbase2/src/lecturer.c
+CMakeFiles/university.dir/src/lect.c.o
+ /home/zulus/Projects/GitProj/progbase2/src/lect.c
  include/dlList.h
  include/university.h
-CMakeFiles/university.dir/src/student.c.o
- /home/zulus/Projects/GitProj/progbase2/src/student.c
+CMakeFiles/university.dir/src/stud.c.o
+ /home/zulus/Projects/GitProj/progbase2/src/stud.c
+ include/dlList.h
+ include/university.h
+CMakeFiles/university.dir/src/university.c.o
+ /home/zulus/Projects/GitProj/progbase2/src/university.c
  include/dlList.h
  include/university.h

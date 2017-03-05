@@ -18,7 +18,6 @@ void *   DLList_removeAt(DLList * list, int index);
 int  	 DLList_find(DLList * list, void * key, int (*compare)(void *, void*));
 int 	 DLList_getLength(DLList * list );
 int      DLList_indexOf(DLList * list, int dataType, void * data, int (*compare)(void *, void*) );
-int 	 DLList_contains(DLList * list, int dataType, void * data, int (*compare)(void *, void*));
 int  	 DLList_isEmpty(DLList * list);
 int 	 DLList_contains(DLList * list, int dataType, void * data, int (*compare)(void *, void*)) ;
 

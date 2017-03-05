@@ -7,13 +7,17 @@ CMakeFiles/a.out.dir/src/collection/dlList.c.o: include/dlList.h
 CMakeFiles/a.out.dir/src/collection/dlNode.c.o: src/collection/dlNode.c
 CMakeFiles/a.out.dir/src/collection/dlNode.c.o: include/dlList.h
 
-CMakeFiles/a.out.dir/src/lecturer.c.o: src/lecturer.c
-CMakeFiles/a.out.dir/src/lecturer.c.o: include/dlList.h
-CMakeFiles/a.out.dir/src/lecturer.c.o: include/university.h
+CMakeFiles/a.out.dir/src/lect.c.o: src/lect.c
+CMakeFiles/a.out.dir/src/lect.c.o: include/dlList.h
+CMakeFiles/a.out.dir/src/lect.c.o: include/university.h
 
-CMakeFiles/a.out.dir/src/student.c.o: src/student.c
-CMakeFiles/a.out.dir/src/student.c.o: include/dlList.h
-CMakeFiles/a.out.dir/src/student.c.o: include/university.h
+CMakeFiles/a.out.dir/src/stud.c.o: src/stud.c
+CMakeFiles/a.out.dir/src/stud.c.o: include/dlList.h
+CMakeFiles/a.out.dir/src/stud.c.o: include/university.h
+
+CMakeFiles/a.out.dir/src/university.c.o: src/university.c
+CMakeFiles/a.out.dir/src/university.c.o: include/dlList.h
+CMakeFiles/a.out.dir/src/university.c.o: include/university.h
 
 CMakeFiles/a.out.dir/test/main.c.o: test/main.c
 CMakeFiles/a.out.dir/test/main.c.o: include/dlList.h

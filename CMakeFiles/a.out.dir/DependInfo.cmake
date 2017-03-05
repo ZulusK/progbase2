@@ -6,8 +6,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/home/zulus/Projects/GitProj/progbase2/src/collection/dlList.c" "/home/zulus/Projects/GitProj/progbase2/CMakeFiles/a.out.dir/src/collection/dlList.c.o"
   "/home/zulus/Projects/GitProj/progbase2/src/collection/dlNode.c" "/home/zulus/Projects/GitProj/progbase2/CMakeFiles/a.out.dir/src/collection/dlNode.c.o"
-  "/home/zulus/Projects/GitProj/progbase2/src/lecturer.c" "/home/zulus/Projects/GitProj/progbase2/CMakeFiles/a.out.dir/src/lecturer.c.o"
-  "/home/zulus/Projects/GitProj/progbase2/src/student.c" "/home/zulus/Projects/GitProj/progbase2/CMakeFiles/a.out.dir/src/student.c.o"
+  "/home/zulus/Projects/GitProj/progbase2/src/lect.c" "/home/zulus/Projects/GitProj/progbase2/CMakeFiles/a.out.dir/src/lect.c.o"
+  "/home/zulus/Projects/GitProj/progbase2/src/stud.c" "/home/zulus/Projects/GitProj/progbase2/CMakeFiles/a.out.dir/src/stud.c.o"
+  "/home/zulus/Projects/GitProj/progbase2/src/university.c" "/home/zulus/Projects/GitProj/progbase2/CMakeFiles/a.out.dir/src/university.c.o"
   "/home/zulus/Projects/GitProj/progbase2/test/main.c" "/home/zulus/Projects/GitProj/progbase2/CMakeFiles/a.out.dir/test/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

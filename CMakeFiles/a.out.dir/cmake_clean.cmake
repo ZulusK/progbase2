@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/a.out.dir/test/main.c.o"
-  "CMakeFiles/a.out.dir/src/lecturer.c.o"
-  "CMakeFiles/a.out.dir/src/student.c.o"
+  "CMakeFiles/a.out.dir/src/lect.c.o"
+  "CMakeFiles/a.out.dir/src/stud.c.o"
+  "CMakeFiles/a.out.dir/src/university.c.o"
   "CMakeFiles/a.out.dir/src/collection/dlList.c.o"
   "CMakeFiles/a.out.dir/src/collection/dlNode.c.o"
   "a.out.pdb"

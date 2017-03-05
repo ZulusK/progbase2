@@ -43,3 +43,14 @@ include(CodeCoverage)
 setup_target_for_coverage(${CMAKE_PROJECT_NAME}_coverage ${CMAKE_PROJECT_NAME} coverage)
 SET(CMAKE_CXX_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
 SET(CMAKE_C_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
+
+include(CTest)
+if(UNIX)
+  set(CTEST_MEMORYCHECK_COMMAND, "usr/bin/valgrind")
+  set(CTEST_MEMORYCHECK_COMMAND_OPTIONS, "--trace-children=yes --leak-check=full")
+endif()
+
+add_test(NAME test
+        WORKING_DIRECTORY ${my_outputdirectory}
+        COMMAND test_exe)
+# gnome-terminal --tab -e "/bin/bash -c 'valgrind --leak-check=yes ./a.out; exec /bin/bash -i'" 
